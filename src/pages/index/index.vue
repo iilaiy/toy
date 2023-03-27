@@ -1,18 +1,38 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
+		<view class="header">
+			<!-- 搜索 -->
+			<InputGroup></InputGroup>
 		</view>
+		<!-- 轮播图 -->
+		<IndexBanner :bannerList="bannerList"></IndexBanner>
+		<!-- 菜单 -->
+		<IndexMenu></IndexMenu>
 	</view>
 </template>
 
 <script>
+	import InputGroup from "@/components/InputGroup"
+	import IndexBanner from "./components/IndexBanner"
+	import IndexMenu from "./components/IndexMenu"
 	export default {
+		// https://mall.fkw.com/model/1/1001-33-8878.html
 		data() {
 			return {
-				title: 'Hello'
+				bannerList: [
+					{
+						imgPath: '/static/img/AD0I6LmFDhACGAAgyseGlQYokOSutgcw7gU46AI.jpg',
+					},
+					{
+						imgPath: '/static/img/AD0I6LmFDhACGAAgyseGlQYoko3p9wUw7gU46AI.jpg',
+					},
+				]
 			}
+		},
+		components: {
+			InputGroup,
+			IndexBanner,
+			IndexMenu
 		},
 		onLoad() {
 
@@ -23,27 +43,11 @@
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+		.header {
+			width: 94%;
+			margin: 30rpx auto 20rpx auto;
+		}
 	}
 </style>

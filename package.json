@@ -68,8 +68,12 @@
     "@dcloudio/uni-stacktracey": "^2.0.2-3070820230322001",
     "@dcloudio/uni-stat": "^2.0.2-3070820230322001",
     "@vue/shared": "^3.0.0",
+    "autoprefixer": "^8.0.0",
     "core-js": "^3.8.3",
     "flyio": "^0.6.2",
+    "postcss-loader": "^7.1.0",
+    "sass": "^1.60.0",
+    "sass-loader": "^8.0.2",
     "vue": ">= 2.6.14 < 2.7",
     "vuex": "^3.2.0"
   },
