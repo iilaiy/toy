@@ -1,5 +1,5 @@
 <template>
-	<view class="input-group">
+	<view class="input-group" @click="toSearch">
 		<icon type="search" size="16" color="#666666"/>
 		<input 
 			disabled
@@ -17,6 +17,13 @@
 			return {
 				
 			};
+		},
+		methods: {
+			toSearch() {
+				uni.navigateTo({
+					url: '/pages/search/search'
+				})
+			}
 		}
 	}
 </script>
@@ -33,7 +40,7 @@
 		margin: 0 15rpx;
 	}
 	input {
-		font-size: 28rpx;
+		font-size: 25rpx;
 	}
 }
 </style>

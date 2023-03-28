@@ -8,9 +8,8 @@
 				:autoplay="autoplay" 
 				:interval="interval"
 				:duration="duration"
-				indicator-active-color="rgba(255, 255, 255, 1)"
 				>
-				<swiper-item v-for="(item, index) in bannerList">
+				<swiper-item v-for="(item, index) in bannerList" :key="index">
 					<view class="swiper-item index-swiper-item">
 						<image :src="item.imgPath"></image>
 					</view>
@@ -40,16 +39,42 @@
 </script>
 
 <style lang="scss" scoped>
+	$swiper-height: 360rpx;
 	.indexbanner {
 		.index-swiper {
-			height: 380rpx;
+			height: $swiper-height;
 		}
 		.index-swiper-item {
 			image {
 				width: 100%;
-				height: 380rpx;
-				display: block;
+				height: $swiper-height;
 			}
+		}
+	}
+
+</style>
+
+<style lang="scss">
+	/* h5 APP */
+	uni-swiper {
+		.uni-swiper-dots {
+			
+		}
+		 
+		.uni-swiper-dots-horizontal {
+			
+
+		}
+	}
+	 
+	/* 微信小程序 */
+	wx-swiper {
+		.wx-swiper-dots {
+			
+		}
+		 
+		.wx-swiper-dots-horizontal {
+			
 		}
 	}
 </style>
