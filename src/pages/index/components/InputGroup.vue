@@ -40,7 +40,7 @@
 		margin: 0 15rpx;
 	}
 	input {
-		font-size: 25rpx;
+		font-size: 28rpx;
 	}
 }
 </style>

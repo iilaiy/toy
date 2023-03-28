@@ -4,7 +4,6 @@ import App from './App'
 import uView from 'uview-ui'
 
 import '@/static/css/global.scss'
-import '@/static/css/iconfont.css'
 
 Vue.config.productionTip = false
 

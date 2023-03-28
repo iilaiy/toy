@@ -14,7 +14,13 @@
 			<!-- 广告 -->
 			<IndexAdvertisement></IndexAdvertisement>
 			<!-- 爆款补货 -->
-			<IndexReplenishment></IndexReplenishment>
+			<IndexReplenishment :replenishmentList="replenishmentList"></IndexReplenishment>
+			<!-- 热门款式 -->
+			<IndexHot></IndexHot>
+			<!-- module -->
+			<view class="moduleWrap">
+				<LikeMain></LikeMain>
+			</view>
 		</view>
 	</view>
 </template>
@@ -25,6 +31,8 @@
 	import IndexMenu from "./components/IndexMenu"
 	import IndexAdvertisement from "./components/IndexAdvertisement"
 	import IndexReplenishment from "./components/IndexReplenishment"
+	import IndexHot from './components/IndexHot'
+	import LikeMain from '@/pages/like/components/LikeMain'
 	export default {
 		// https://mall.fkw.com/model/1/1001-33-8878.html
 		data() {
@@ -40,23 +48,66 @@
 				menuList: [
 					{
 						iconPath: '/static/img/icon/AD0I6LmFDhAEGAAgo8mGlQYooKCNnQUwXjhz.png',
-						text: '乐高积木'
+						text: '乐高积木',
+						hrefs: '/pages/buildingBlocks/buildingBlocks',
 					},
 					{
 						iconPath: '/static/img/icon/AD0I6LmFDhAEGAAg0cqGlQYoqaLQ0wMwXjhr.png',
-						text: '雕像玩偶'
+						text: '雕像玩偶',
+						hrefs: '/pages/statue/statue'
 					},
 					{
 						iconPath: '/static/img/icon/AD0I6LmFDhAEGAAgwMqGlQYosNSGsgMwYThq.png',
-						text: '盲盒玩具'
+						text: '盲盒玩具',
+						hrefs: '/pages/blindBox/blindBox'
 					},
 					{
 						iconPath: '/static/img/icon/AD0I6LmFDhAEGAAgr8qGlQYozOSF3gEwXjhq.png',
-						text: '玩具手办'
+						text: '玩具手办',
+						hrefs: '/pages/handHandling/handHandling'
 					},
 					{
 						iconPath: '/static/img/icon/AD0I6LmFDhAEGAAg9cmGlQYosMfE2wMwbThp.png',
-						text: '潮流玩具'
+						text: '潮流玩具',
+						hrefs: '/pages/fashionToy/fashionToy'
+					},
+				],
+				replenishmentList: [
+					{
+						id: 1100,
+						headImgPath: '/static/img/AD0I6LmFDhAEGAAgi92GlQYorNz6pwEwkgU44QI.png',
+						title: '深林之子的禅座日记',
+						price: '188',
+					},
+					{
+						id: 1101,
+						headImgPath: '/static/img/AD0I1PzZDRAEGAAg7N7MkAYoru_tgAcw1QE4_gE.png',
+						title: '盲盒手办礼物女不支持系列',
+						price: '120',
+					},
+					{
+						id: 1102,
+						headImgPath: '/static/img/AD0I6LmFDhAEGAAg3eCGlQYo89eurgEw1gE4hAI.png',
+						title: '巫妖阿尔萨斯',
+						price: '698',
+					},
+					{
+						id: 1103,
+						headImgPath: '/static/img/AD0I6LmFDhAEGAAgzeGGlQYorq7ysgYw1wE4hAI.png',
+						title: '甜蜜妖怪盲盒',
+						price: '69',
+					},
+					{
+						id: 1104,
+						headImgPath: '/static/img/AD0I6LmFDhAEGAAg3OGGlQYo3Pnm5QYw1gE4hAI.png',
+						title: '淘气骷髅人',
+						price: '176',
+					},
+					{
+						id: 1105,
+						headImgPath: '/static/img/AD0I1PzZDRAEGAAg4d7MkAYosPHb9Acw1AE4_gE.png',
+						title: 'Hellokitty女孩公仔摆件手办',
+						price: '120',
 					},
 				],
 			}
@@ -67,6 +118,8 @@
 			IndexMenu,
 			IndexAdvertisement,
 			IndexReplenishment,
+			IndexHot,
+			LikeMain,
 		},
 		onLoad() {
 
@@ -81,7 +134,7 @@
 	.content {
 		.header {
 			width: 94%;
-			margin: 30rpx auto 20rpx auto;
+			margin: 20rpx auto;
 		}
 		.menu {
 			margin: 25rpx 0 0 0;

@@ -49,6 +49,54 @@
             }
             
         }
+        ,{
+            "path" : "pages/like/like",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "猜你喜欢"
+            }
+            
+        }
+        ,{
+            "path" : "pages/buildingBlocks/buildingBlocks",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "乐高积木"
+            }
+            
+        }
+        ,{
+            "path" : "pages/statue/statue",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "雕像玩偶"
+            }
+            
+        }
+        ,{
+            "path" : "pages/blindBox/blindBox",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "盲盒玩具"
+            }
+            
+        }
+        ,{
+            "path" : "pages/handHandling/handHandling",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "玩具手办"
+            }
+            
+        }
+        ,{
+            "path" : "pages/fashionToy/fashionToy",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "潮流玩具"
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -61,6 +109,8 @@
 	},
 	"tabBar": {
 		"backgroundColor": "#ffffff",
+		"color": "#666666",
+		"selectedColor": "#ff7214",
 		// "borderStyle": "white",
 		"list": [
 			{

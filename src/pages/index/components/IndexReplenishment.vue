@@ -8,13 +8,13 @@
 		</view>
 		<view class="top">
 			<view class="t-bg position">
-				<image src="@/static/img/AD0I6LmFDhAEGAAgi92GlQYorNz6pwEwkgU44QI.png"></image>
+				<image :src="replenishmentList[index].headImgPath"></image>
 			</view>
 			<view class="t-bot">
 				<view class="t-left">
-					<view class="tit">深林之子的禅座日记</view>
+					<view class="tit text-one-hidden">{{ replenishmentList[index].title }}</view>
 					<view class="price">
-						￥<text>188.00</text>
+						￥<text>{{ Number(replenishmentList[index].price).toFixed(2) }}</text>
 					</view>
 				</view>
 				<button class="t-button" type="default" plain="true">
@@ -23,17 +23,17 @@
 			</view>
 		</view>
 		<view class="b-bot">
-			<scroll-view scroll-x="true" @scroll="scroll" class="scroll-container">
-				<view class="scroll-item" v-for="index in 4">
+			<scroll-view scroll-x="true" class="scroll-container">
+				<view class="scroll-item" v-for="(item, index) in replenishmentData" :key="item.id">
 					<view class="item-bg position">
-						<image src="../../../static/img/AD0I6LmFDhAEGAAg3eCGlQYo89eurgEw1gE4hAI.png"></image>
+						<image :src="item.headImgPath"></image>
 					</view>
 					<view class="item-bot">
-						<view class="item-title tit">
-							巫妖阿尔萨斯
+						<view class="item-title tit text-one-hidden">
+							{{ item.title }}
 						</view>
 						<view class="item-price price">
-							￥<text>698.00</text>
+							￥<text>{{ Number(item.price).toFixed(2) }}</text>
 						</view>
 					</view>
 				</view>
@@ -44,11 +44,27 @@
 
 <script>
 	export default {
-		data() {
-			return {
-				
+		props: {
+			replenishmentList: {
+				type: Array
 			}
 		},
+		data() {
+			return {
+				index: 0,	// 热门
+			}
+		},
+		computed: {
+			replenishmentData() {
+				let arr = []
+				this.replenishmentList.map((item, index) => {
+					if (index > 0) {
+						arr.push(item)
+					}
+				})
+				return arr
+			}
+		}
 	}
 </script>
 
@@ -64,7 +80,7 @@
 			height: 100%;
 		}
 		.bg {
-			height: 920rpx;
+			height: 810rpx;
 		}
 		.title {
 			color: #ffffff;
@@ -124,16 +140,23 @@
 				.scroll-item {
 					margin-right: 10rpx;
 					display: inline-block;
-					width: 280rpx;
-					height: 350rpx;
+					width: 215rpx;
+					height: 250rpx;
 					position: relative;
 					.item-bot {
-						width: 96%;
+						width: 92%;
 						left: 50%;
 						position: absolute;
 						transform: translateX(-50%);
 						bottom: 4%;
 						background-image: url('@/static/img/icon/AD0I6LmFDhAEGAAgm_GGlQYop9rXuwEwvwE4XA.png');
+						background-size: 100% 100%;
+						padding: 5rpx 10rpx;
+						box-sizing: border-box;
+						text-align: center;
+						.item-title {
+							margin-bottom: 5rpx;
+						}
 					}
 				}
 			}

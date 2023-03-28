@@ -1,6 +1,11 @@
 <template>
 	<view class="menu-container">
-		<view class="menu-item" v-for="(item, index) in menuList" :key="index">
+		<view 
+			class="menu-item" 
+			v-for="(item, index) in menuList" 
+			:key="index"
+			@click="toPage(item)"
+			>
 			<i>
 				<image :src="item.iconPath" mode="aspectFill"></image>
 			</i>
@@ -19,6 +24,13 @@
 		data() {
 			return {
 				
+			}
+		},
+		methods: {
+			toPage(item) {
+				uni.navigateTo({
+					url: item.hrefs
+				});
 			}
 		}
 	}
