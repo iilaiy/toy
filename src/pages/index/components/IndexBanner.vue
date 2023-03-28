@@ -46,7 +46,6 @@
 		}
 		.index-swiper-item {
 			image {
-				width: 100%;
 				height: $swiper-height;
 			}
 		}

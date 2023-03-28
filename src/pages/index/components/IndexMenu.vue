@@ -37,10 +37,6 @@
 				width: 90rpx;
 				height: 100rpx;
 			}
-			image {
-				width: 100%;
-				height: 100%;
-			}
 			text {
 				text-align: center;
 				display: block;

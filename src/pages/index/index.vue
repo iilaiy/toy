@@ -10,8 +10,12 @@
 		<view class="menu">
 			<IndexMenu :menuList="menuList"></IndexMenu>
 		</view>
-		<!--  -->
-		<IndexAdvertisement></IndexAdvertisement>
+		<view class="main">
+			<!-- 广告 -->
+			<IndexAdvertisement></IndexAdvertisement>
+			<!-- 爆款补货 -->
+			<IndexReplenishment></IndexReplenishment>
+		</view>
 	</view>
 </template>
 
@@ -20,6 +24,7 @@
 	import IndexBanner from "./components/IndexBanner"
 	import IndexMenu from "./components/IndexMenu"
 	import IndexAdvertisement from "./components/IndexAdvertisement"
+	import IndexReplenishment from "./components/IndexReplenishment"
 	export default {
 		// https://mall.fkw.com/model/1/1001-33-8878.html
 		data() {
@@ -61,6 +66,7 @@
 			IndexBanner,
 			IndexMenu,
 			IndexAdvertisement,
+			IndexReplenishment,
 		},
 		onLoad() {
 
@@ -79,6 +85,10 @@
 		}
 		.menu {
 			margin: 25rpx 0 0 0;
+		}
+		.main {
+			width: 92%;
+			margin: 0 auto;
 		}
 	}
 </style>
