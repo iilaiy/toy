@@ -17,10 +17,12 @@
 			<IndexReplenishment :replenishmentList="replenishmentList"></IndexReplenishment>
 			<!-- 热门款式 -->
 			<IndexHot></IndexHot>
-			<!-- module -->
-			<view class="moduleWrap">
-				<LikeMain></LikeMain>
-			</view>
+		</view>
+		<!-- module -->
+		<!-- 菜单 -->
+		<SwiperTab :tabBars="tabBars" :tabIndex="tabIndex" @tabtap="tabtap"></SwiperTab>
+		<view class="main moduleWrap">
+			<LikeMain></LikeMain>
 		</view>
 	</view>
 </template>
@@ -32,9 +34,12 @@
 	import IndexAdvertisement from "./components/IndexAdvertisement"
 	import IndexReplenishment from "./components/IndexReplenishment"
 	import IndexHot from './components/IndexHot'
+	import SwiperTab from '@/components/SwiperTab'
 	import LikeMain from '@/pages/like/components/LikeMain'
 	export default {
+		// https://www.uviewui.com/components/swiper.html
 		// https://mall.fkw.com/model/1/1001-33-8878.html
+		// https://www.shuzhiduo.com/A/6pdDw9aD5w/
 		data() {
 			return {
 				bannerList: [
@@ -110,6 +115,15 @@
 						price: '120',
 					},
 				],
+				tabIndex:0,// 选中的
+				tabBars:[
+				  { name:"猜你喜欢",left: null, width: null },
+				  { name:"乐高积木",left: null, width: null },
+				  { name:"雕像玩偶",left: null, width: null },
+				  { name:"盲盒玩具",left: null, width: null },
+				  { name:"玩具手办",left: null, width: null },
+				  { name:"潮流玩具",left: null, width: null },
+				]
 			}
 		},
 		components: {
@@ -119,13 +133,17 @@
 			IndexAdvertisement,
 			IndexReplenishment,
 			IndexHot,
+			SwiperTab,
 			LikeMain,
 		},
 		onLoad() {
 
 		},
 		methods: {
-
+			//接受子组件传过来的值点击切换导航
+            tabtap(index){
+                this.tabIndex = index;
+            },
 		}
 	}
 </script>

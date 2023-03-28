@@ -79,7 +79,7 @@
 			}
 		}
 		.conta {
-			padding-bottom: 25rpx;
+			padding-bottom: 5rpx;
 			.box {
 				margin-bottom: 30rpx;
 				box-shadow: 5rpx 5rpx 20rpx #ebeaea;
