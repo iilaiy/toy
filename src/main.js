@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import App from './App'
 
+import store from './store/index'
 import uView from 'uview-ui'
 
 import '@/static/css/global.scss'
 
 Vue.config.productionTip = false
+
+Vue.prototype.$store = store
 
 Vue.use(uView)
 // 调用setConfig方法，方法内部会进行对象属性深度合并，可以放心嵌套配置
@@ -55,6 +58,7 @@ uni.addInterceptor({
 });
 
 const app = new Vue({
-  ...App
+	store,
+	...App
 })
 app.$mount()

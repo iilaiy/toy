@@ -1,0 +1,60 @@
+{
+	"data": {
+		"commodityData": [
+			{
+				"cid": 1,
+				"name": "森林之子的禅座日记",
+				"image": "https://29449448.s61i.faimallusr.com/4/AD0I6LmFDhAEGAAgi92GlQYorNz6pwEwkgU44QI.png",
+				"categoryName": "雕像玩偶",
+				"categoryId": 2,
+				"price": "188",
+				"salesVolume": 10023,
+				"headImg": "https://29449448.s61i.faimallusr.com/2/AD0I6LmFDhACGAAg6vOGlQYo_K7k-gMw7gU47gU.jpg",
+				"parameter": {
+					"type": "玩具",
+					"specification": "一份"
+				},
+				"description": "重量比较轻，可塑性也非常的棒，细节的表现最好的材质，而且手感非常好",
+				"picList": [],
+				"content": "角色模型的包括范围是动画、漫画、游戏、电影里面的角色做成的模型。包括机器人或者人类模型都归为此类。常见的是高达模型，还有各类动漫的人物模型。"
+			},
+			{
+				"cid": 2,
+				"name": "巫妖阿尔萨斯",
+				"image": "https://29449448.s61i.faimallusr.com/4/AD0I6LmFDhAEGAAg3eCGlQYo89eurgEw1gE4hAI.png",
+				"categoryName": "雕像玩偶",
+				"categoryId": 2,
+				"price": "698",
+				"salesVolume": 1027,
+				"headImg": "https://29449448.s61i.faimallusr.com/2/AD0I6LmFDhACGAAg6vOGlQYo6fGbhAcw7gU47gU.jpg",
+				"parameter": {
+					"type": "玩具",
+					"specification": "一份"
+				},
+				"description": "重量比较轻，可塑性也非常的棒，细节的表现最好的材质，而且手感非常好",
+				"picList": [],
+				"content": "角色模型的包括范围是动画、漫画、游戏、电影里面的角色做成的模型。包括机器人或者人类模型都归为此类。常见的是高达模型，还有各类动漫的人物模型。"
+			},
+			{
+				"cid": 3,
+				"name": "甜蜜妖怪盲盒",
+				"image": "https://29449448.s61i.faimallusr.com/4/AD0I6LmFDhAEGAAg3eCGlQYo89eurgEw1gE4hAI.png",
+				"categoryName": "盲盒玩具",
+				"categoryId": 3,
+				"price": "69",
+				"salesVolume": 7523,
+				"headImg": "https://29449448.s61i.faimallusr.com/2/AD0I6LmFDhACGAAg6vOGlQYovqTC2AMw7gU47gU.jpg",
+				"parameter": {
+					"type": "玩具",
+					"specification": "一份"
+				},
+				"description": "不能提前得知具体产品款式的玩具盒子，具有随机属性",
+				"picList": [],
+				"content": "盒子里装着样式多样的可爱玩偶手办，但盒子上并没有标注具体是哪一款，里面通常装的是动漫、影视作品的周边，或者设计师单独设计出来的玩偶。之所以叫盲盒，是因为盒子上没有标注，只有打开才会知道自己抽到了什么。"
+			}
+		]
+	},
+	"msg": "Request Success！",
+	"code": 200,
+	"version": "43e4084dc66fbb4f962edca8993454ab"
+}

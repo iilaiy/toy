@@ -21,8 +21,9 @@
 		<!-- module -->
 		<!-- 菜单 -->
 		<SwiperTab :tabBars="tabBars" :tabIndex="tabIndex" @tabtap="tabtap"></SwiperTab>
-		<view class="main moduleWrap">
-			<LikeMain></LikeMain>
+		<view class="moduleWrap">
+			<!-- 滑动|点击 切换组件 -->
+			<IndexSubject></IndexSubject>
 		</view>
 	</view>
 </template>
@@ -34,8 +35,8 @@
 	import IndexAdvertisement from "./components/IndexAdvertisement"
 	import IndexReplenishment from "./components/IndexReplenishment"
 	import IndexHot from './components/IndexHot'
+	import IndexSubject from './components/IndexSubject'
 	import SwiperTab from '@/components/SwiperTab'
-	import LikeMain from '@/pages/like/components/LikeMain'
 	export default {
 		// https://www.uviewui.com/components/swiper.html
 		// https://mall.fkw.com/model/1/1001-33-8878.html
@@ -133,8 +134,8 @@
 			IndexAdvertisement,
 			IndexReplenishment,
 			IndexHot,
+			IndexSubject,
 			SwiperTab,
-			LikeMain,
 		},
 		onLoad() {
 

@@ -3,16 +3,14 @@
 	<view>
 		<text>喜欢</text>
 		<veiw class="main">
-			<LikeMain></LikeMain>
+			
 		</veiw>
 	</view>
 </template>
 
 <script>
-	import LikeMain from './components/LikeMain'
 	export default {
 		components: {
-			LikeMain
 		},
 		data() {
 			return {
