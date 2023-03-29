@@ -4,31 +4,15 @@
 			<text>热门款式</text>
 		</view>
 		<view class="conta">
-			<view class="box">
+			<view class="box" v-for="item in hotList" :key="item.cid">
 				<view class="img-box">
-					<image src="../../../static/img/AD0I6LmFDhAEGAAgs_SGlQYo-ZWz-AUwyAU41QI.png"></image>
+					<image :src="item.image"></image>
 				</view>
 				<view class="t-bot clearfix">
 					<view class="t-left">
-						<view class="tit text-one-hidden">宇宙波比-梦旅人系列</view>
+						<view class="tit text-one-hidden">{{ item.name }}</view>
 						<view class="price">
-							￥<text>296.00</text>
-						</view>
-					</view>
-					<button class="t-button" type="default" plain="true">
-						立即购买
-					</button>
-				</view>
-			</view>
-			<view class="box">
-				<view class="img-box">
-					<image src="../../../static/img/AD0I6LmFDhAEGAAgvueGlQYoh-zY5gIwyAU41AI.png"></image>
-				</view>
-				<view class="t-bot clearfix">
-					<view class="t-left">
-						<view class="tit text-one-hidden">芭比兔女孩系列盲盒</view>
-						<view class="price">
-							￥<text>69.00</text>
+							￥<text>{{ Number(item.price).toFixed(2) }}</text>
 						</view>
 					</view>
 					<button class="t-button" type="default" plain="true">
@@ -42,6 +26,11 @@
 
 <script>
 	export default {
+		props: {
+			hotList: {
+				type: Array
+			}
+		},
 		data() {
 			return {
 			}

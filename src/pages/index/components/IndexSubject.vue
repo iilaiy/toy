@@ -1,16 +1,16 @@
 <template>
 	<view class="subject">
 		<view class="subconta">
-			<view class="subbox" v-for="index in 3">
-				<view class="imgbox">
-					<image src="@/static/img/AD0I6LmFDhACGAAg6vOGlQYozuv34QUw7gU47gU.jpg"></image>
+			<view class="subbox" v-for="item in moduleData" :key="item.cid">
+				<view class="imgbox" :style="{backgroundImage: `url('${item.image}')`}">
+					<!-- <image :src="item.image"></image> -->
 				</view>
 				<view class="sbot">
 					<view class="stit">
-						<text class="text-two-dot">蜡笔小新日常系列盲盒</text>
+						<text class="text-one-hidden">{{ item.name }}</text>
 					</view>
 					<view class="sprice">
-						￥<text>69.5</text>
+						￥<text>{{ Number(item.price).toFixed(2) }}</text>
 					</view>
 					<view class="sbtn">
 						<text>立即抢购</text>
@@ -26,7 +26,7 @@
 		props: {
 			/* 接收不同模块传递的数据进行渲染 */
 			moduleData: {
-				
+				Array
 			}
 		},
 		data() {
@@ -50,11 +50,18 @@
 				width: 48%;
 				margin-top: 4%;
 				background-color: aliceblue;
-				border-radius: 25rpx;
+				border-radius: 15rpx;
 				.imgbox {
 					border-radius: 15rpx;
 					overflow: hidden;
 					height: 300rpx;
+					background-size: cover;
+					/* image {
+						max-width: 100%;
+						max-height: 100%;
+						display: block;
+						margin: auto;
+					} */
 				}
 			}
 			.sbot {
@@ -66,6 +73,10 @@
 					width: 100%;
 					margin-bottom: 20rpx;
 					font-size: 28rpx;
+					text {
+						width: 100%;
+						display: block;
+					}
 				}
 				.sprice {
 					color: #ff7214;

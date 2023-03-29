@@ -16,19 +16,20 @@
 			<!-- 爆款补货 -->
 			<IndexReplenishment :replenishmentList="replenishmentList"></IndexReplenishment>
 			<!-- 热门款式 -->
-			<IndexHot></IndexHot>
+			<IndexHot :hotList="hotList"></IndexHot>
 		</view>
 		<!-- module -->
 		<!-- 菜单 -->
 		<SwiperTab :tabBars="tabBars" :tabIndex="tabIndex" @tabtap="tabtap"></SwiperTab>
 		<view class="moduleWrap">
-			<!-- 滑动|点击 切换组件 -->
-			<IndexSubject></IndexSubject>
+			<!-- 滑动|点击 切换组件数据 -->
+			<IndexSubject :moduleData="cmpData"></IndexSubject>
 		</view>
 	</view>
 </template>
 
 <script>
+	let jsonData = require('@/data/commodity.js');
 	import InputGroup from "./components/InputGroup"
 	import IndexBanner from "./components/IndexBanner"
 	import IndexMenu from "./components/IndexMenu"
@@ -116,15 +117,18 @@
 						price: '120',
 					},
 				],
-				tabIndex:0,// 选中的
+				tabIndex: 0,// 选中的
 				tabBars:[
-				  { name:"猜你喜欢",left: null, width: null },
-				  { name:"乐高积木",left: null, width: null },
-				  { name:"雕像玩偶",left: null, width: null },
-				  { name:"盲盒玩具",left: null, width: null },
-				  { name:"玩具手办",left: null, width: null },
-				  { name:"潮流玩具",left: null, width: null },
-				]
+				  { name:"猜你喜欢", categoryId: 1, left: null, width: null },
+				  { name:"乐高积木", categoryId: 2, left: null, width: null },
+				  { name:"雕像玩偶", categoryId: 3, left: null, width: null },
+				  { name:"盲盒玩具", categoryId: 4, left: null, width: null },
+				  { name:"玩具手办", categoryId: 5, left: null, width: null },
+				  { name:"潮流玩具", categoryId: 6, left: null, width: null },
+				],
+				commodityList: jsonData.commodityList.commodityData,	// 所有商品
+				hotList: [],	// 热门商品
+				cmpData: [],	// 组件数据
 			}
 		},
 		components: {
@@ -143,8 +147,63 @@
 		methods: {
 			//接受子组件传过来的值点击切换导航
             tabtap(index){
+				/* 切换组件数据 */
                 this.tabIndex = index;
             },
+			/* 过滤组件数据 */
+			filterCmpData(categoryId) {
+				this.cmpData.length = 0
+				
+				if (categoryId === 0) {
+					// recommend
+					this.commodityList.map(item => {
+						if (item.recommend) {
+							this.cmpData.push(item)
+						}
+					})
+					return
+				}
+				
+				this.commodityList.map(item => {
+					if (item.categoryId === categoryId) {
+						this.cmpData.push(item)
+					}
+				})
+				// console.log(this.cmpData);
+			},
+			filterHot(data) {
+				if (data.length === 0) return []
+				data.sort((val , val2) => {
+					return val2.salesVolume - val.salesVolume
+				})
+				this.hotList = data.splice(0, 2)
+				// console.log(this.hotList);
+			},
+			async getCommodity() {
+				/* const res = await this.$myRequest({
+					url: '/api/commodity.json',
+				}) */
+				
+				/* const res = await uni.request({
+					url: "/api/commodity.json"
+				})
+				console.log(res);
+				if (res.data.data) {
+					this.filterHot(res.data.data.commodityData)
+				}
+				return res */
+			}
+		},
+		created() {
+			// this.getCommodity()
+			this.filterHot(this.commodityList)
+			this.filterCmpData(this.tabIndex)
+		},
+		watch: {
+			tabIndex(val) {
+				/* 监听当前的tab，改变不同组件的数据 */
+				this.filterCmpData(val)
+			}
 		}
 	}
 </script>
