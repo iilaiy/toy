@@ -1,7 +1,7 @@
 <template>
 	<view class="swiper-tab-bar">
 		<scroll-view class="tab-bar" scroll-x="true" :scroll-left="scrollLeft">
-			<view class="tab-item" v-for="(tab,index) in category" :key="index" :class="{'active' : (tabIndex == tabBars.categoryId) || (tabIndex == index)}"
+			<view class="tab-item" v-for="(tab,index) in category" :key="index" :class="{'active' : tabIndex == index}"
 				@tap="tabtap(index)"
 				>
 				{{tab.name}} {{tab.num?tab.num:""}}
@@ -73,6 +73,11 @@
 				}; */
 				// 效果三(当前点击子元素居中展示)  不受子元素宽度影响
 				this.scrollLeft = this.category[index].left - this.contentScrollW / 2 + this.category[index].width / 2;
+			}
+		},
+		watch: {
+			tabIndex(val) {
+				this.changeTitle(val)
 			}
 		}
 	}

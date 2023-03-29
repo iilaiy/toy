@@ -1,8 +1,8 @@
 <template>
-	<view class="subject">
+	<view class="subject" ><!-- @touchstart="touchStart" @touchend="touchEnd" -->
 		<view class="subconta">
 			<view class="subbox" v-for="item in moduleData" :key="item.cid">
-				<view class="imgbox" :style="{backgroundImage: `url('${item.image}')`}">
+				<view class="imgbox" :style="{backgroundImage: 'url(' + item.image + ')'}">
 					<!-- <image :src="item.image"></image> -->
 				</view>
 				<view class="sbot">
@@ -31,7 +31,44 @@
 		},
 		data() {
 			return {
+				//初始化点击位置的x坐标
+				// startX: 0,
 			}
+		},
+		methods: {
+			/*
+			* 触摸开始
+			* @param {Object} e
+			**/
+			/* touchStart(e) {
+				// console.log(e);
+				if (e.touches.length == 1) {
+					//设置触摸起始点水平方向位置
+					this.startX = e.touches[0].clientX;
+				}
+			}, */
+			/*
+			* 触摸结束
+			* @param {Object} e
+			**/
+			/* touchEnd(e) {
+				// console.log(e);
+				if (e.changedTouches.length == 1) {
+					//手指移动结束后水平位置
+					var endX = e.changedTouches[0].clientX;
+					let diff = endX - this.startX;
+					if(Math.abs(diff)>80){
+						// 判断左滑右滑跳转对应的tab并向父组件传递当前的分类ID
+						if(diff>0){
+							// console.log("左滑...")
+							this.$emit('tabtap', -1)
+						}else{
+							// console.log("右滑...")
+							this.$emit('tabtap', 1)
+						}
+					}
+				}
+			} */
 		},
 	}
 </script>
@@ -39,6 +76,7 @@
 <style lang="scss" scoped>
 	.subject {
 		background-color: #fbfbfb;
+		padding-bottom: 4%;
 		.subconta {
 			width: 92%;
 			margin: 0 auto;

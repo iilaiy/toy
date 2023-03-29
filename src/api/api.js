@@ -1,6 +1,9 @@
 /* 
-	TODO: 正式的小程序在域名上只支持 https (wx.request、wx.uploadFile、wx.downloadFile) 和 wss (wx.connectSocket) 协议
-		  域名不能使用IP或者localhost之类的
+	正式的小程序在域名上只支持 https (wx.request、wx.uploadFile、wx.downloadFile) 和 wss (wx.connectSocket) 协议
+		
+		域名不能使用IP或者localhost之类的
+		  
+		开发者工具开启‘不校验合法域名……’
  */
 
 let BASE_URL = "http://localhost:8080"

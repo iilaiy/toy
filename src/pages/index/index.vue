@@ -21,15 +21,19 @@
 		<!-- module -->
 		<!-- 菜单 -->
 		<SwiperTab :tabBars="tabBars" :tabIndex="tabIndex" @tabtap="tabtap"></SwiperTab>
-		<view class="moduleWrap">
-			<!-- 滑动|点击 切换组件数据 -->
-			<IndexSubject :moduleData="cmpData"></IndexSubject>
+		<scroll-view class="moduleWrap" scroll-y>
+			<!-- 滑动|点击 切换组件数据 --><!-- @tabtap="touchTab" -->
+			<IndexSubject :moduleData="cmpData" ></IndexSubject>
+		</scroll-view>
+		<view class="main">
+			<!-- 店铺信息 -->
+			<IndexShop></IndexShop>
 		</view>
 	</view>
 </template>
 
 <script>
-	let jsonData = require('@/data/commodity.js');
+	let jsonData = require('@/data/commodity.js')
 	import InputGroup from "./components/InputGroup"
 	import IndexBanner from "./components/IndexBanner"
 	import IndexMenu from "./components/IndexMenu"
@@ -37,6 +41,7 @@
 	import IndexReplenishment from "./components/IndexReplenishment"
 	import IndexHot from './components/IndexHot'
 	import IndexSubject from './components/IndexSubject'
+	import IndexShop from './components/IndexShop'
 	import SwiperTab from '@/components/SwiperTab'
 	export default {
 		// https://www.uviewui.com/components/swiper.html
@@ -117,16 +122,17 @@
 						price: '120',
 					},
 				],
-				tabIndex: 0,// 选中的
+				tabIndex: 0,// 选中的(tab索引)
 				tabBars:[
-				  { name:"猜你喜欢", categoryId: 1, left: null, width: null },
-				  { name:"乐高积木", categoryId: 2, left: null, width: null },
-				  { name:"雕像玩偶", categoryId: 3, left: null, width: null },
-				  { name:"盲盒玩具", categoryId: 4, left: null, width: null },
-				  { name:"玩具手办", categoryId: 5, left: null, width: null },
-				  { name:"潮流玩具", categoryId: 6, left: null, width: null },
+				  { name:"猜你喜欢", categoryId: 11, left: null, width: null },
+				  { name:"乐高积木", categoryId: 22, left: null, width: null },
+				  { name:"雕像玩偶", categoryId: 33, left: null, width: null },
+				  { name:"盲盒玩具", categoryId: 44, left: null, width: null },
+				  { name:"玩具手办", categoryId: 55, left: null, width: null },
+				  { name:"潮流玩具", categoryId: 66, left: null, width: null },
 				],
 				commodityList: jsonData.commodityList.commodityData,	// 所有商品
+				// commodityList: [],
 				hotList: [],	// 热门商品
 				cmpData: [],	// 组件数据
 			}
@@ -139,6 +145,7 @@
 			IndexReplenishment,
 			IndexHot,
 			IndexSubject,
+			IndexShop,
 			SwiperTab,
 		},
 		onLoad() {
@@ -150,6 +157,16 @@
 				/* 切换组件数据 */
                 this.tabIndex = index;
             },
+			/* touchTab(type) {
+				switch(type) {
+					case 1: 
+						if (this.tabIndex<this.tabBars.length-1) this.tabIndex++
+						break
+					case -1:
+						if (this.tabIndex>0) this.tabIndex--
+						break
+				}
+			}, */
 			/* 过滤组件数据 */
 			filterCmpData(categoryId) {
 				this.cmpData.length = 0
@@ -163,6 +180,8 @@
 					})
 					return
 				}
+				
+				categoryId = this.tabBars[categoryId-1].categoryId
 				
 				this.commodityList.map(item => {
 					if (item.categoryId === categoryId) {
@@ -180,18 +199,16 @@
 				// console.log(this.hotList);
 			},
 			async getCommodity() {
-				/* const res = await this.$myRequest({
+				const res = await this.$myRequest({
 					url: '/api/commodity.json',
-				}) */
-				
-				/* const res = await uni.request({
-					url: "/api/commodity.json"
 				})
-				console.log(res);
+				// console.log(res);
 				if (res.data.data) {
+					this.commodityList = res.data.data.commodityData
 					this.filterHot(res.data.data.commodityData)
+					this.filterCmpData(this.tabIndex)
 				}
-				return res */
+				return res
 			}
 		},
 		created() {
@@ -220,6 +237,10 @@
 		.main {
 			width: 92%;
 			margin: 0 auto;
+		}
+		.moduleWrap {
+			/* 控制分类模块组件渲染的区域高度 */
+			max-height: 1000rpx;
 		}
 	}
 </style>
