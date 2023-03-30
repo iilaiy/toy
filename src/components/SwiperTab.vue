@@ -1,5 +1,5 @@
 <template>
-	<view class="swiper-tab-bar">
+	<!-- <view class="swiper-tab-bar">
 		<scroll-view class="tab-bar" scroll-x="true" :scroll-left="scrollLeft">
 			<view class="tab-item" v-for="(tab,index) in category" :key="index" :class="{'active' : tabIndex == index}"
 				@tap="tabtap(index)"
@@ -8,7 +8,25 @@
 				<view class="swiper-tab-line"></view>
 			</view>
 		</scroll-view>
-	</view>
+	</view> -->
+	<u-tabs 
+		:list="category" 
+		@tap="tabtap"
+		lineColor="#ff5e15"
+		lineHeight="6rpx"
+		lineWidth="45rpx"
+		:activeStyle="{
+		        color: '#303133',
+		        fontWeight: 'bold',
+				fontSize: '25rpx',
+		        transform: 'scale(1.05)'
+		    }"
+		    :inactiveStyle="{
+		        color: '#606266',
+				fontSize: '25rpx',
+		        transform: 'scale(1)'
+		    }"
+	></u-tabs>
 </template>
 
 <script>
@@ -27,15 +45,16 @@
 		},
 		mounted() {
 			// 获取标题区域宽度，和每个子元素节点的宽度
-			this.getScrollW()
+			// this.getScrollW()
 		},
 		computed: {
 		},
 		methods: {
 			//点击切换导航
-			tabtap(index) {
-				this.$emit('tabtap', index)
-				this.changeTitle(index)
+			tabtap(item) {
+				// this.$emit('tabtap', index)
+				this.$emit('tabtap', item.index)
+				this.changeTitle(item.index)
 			},
 			// 获取标题区域宽度，和每个子元素节点的宽度以及元素距离左边栏的距离
 			getScrollW() {

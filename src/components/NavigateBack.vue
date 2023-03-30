@@ -5,7 +5,7 @@
 		<u-icon 
 			name="arrow-left" 
 			color="#000000"
-			size="38" 
+			size="40" 
 			@click="back">
 		</u-icon>
 		<!-- #endif -->
