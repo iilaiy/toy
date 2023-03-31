@@ -2,7 +2,7 @@
 	<view class="searchviews">
 		<view class="header">
 			<NavigateBack class="back"></NavigateBack>
-			<view class="search-group">
+			<view class="search-group ">
 				<u-search
 					placeholder="请输入关键字..." 
 					v-model="keyword"
@@ -17,7 +17,7 @@
 			</view>
 		</view>
 		<!-- 筛选控件 -->
-		<SelectControl></SelectControl>
+		<SelectControl @selectCondition="selectCondition"></SelectControl>
 		<!-- 搜索结果 -->
 		<SearchResult :resultArray="resultArray"></SearchResult>
 		<!-- 搜索结果为空时显示该组件 -->
@@ -47,7 +47,7 @@
 		},
 		methods: {
 			searchResult(result) {
-				console.log(result);
+				// console.log(result);
 				this.resultArray = []
 				/* 查询搜索结果 (name、categoryName) */
 				this.commodityList.map(item => {
@@ -55,6 +55,33 @@
 						this.resultArray.push(item)
 					}
 				})
+			},
+			selectCondition(obj) {
+				// console.log(obj)
+				switch (obj.item.id) {
+						/* if 综合 默认不变 */
+					case 1:
+						this.searchResult(this.keyword)
+						break
+						/* 销量 */
+					case 2:
+						this.resultArray.sort((val, val2) => {
+							return val2.salesVolume - val.salesVolume
+						})
+						// console.log(this.resultArray)
+						break
+						/* 价格 */
+					case 3:
+						this.resultArray.sort((val, val2) => {
+							/* 先判断升序or降序 */
+							if (obj.sortPrice === 1) {
+								return val.price - val2.price
+							}
+							return val2.price - val.price
+						})
+						// console.log(this.resultArray)
+						break
+				}
 			}
 		},
 		mounted() {

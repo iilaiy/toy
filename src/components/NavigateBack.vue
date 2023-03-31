@@ -15,6 +15,12 @@
 <script>
 	export default {
 		name:"NavigateBack",
+		props: {
+			routerPath: {
+				type: String,
+				default: '/pages/index/index'
+			}
+		},
 		data() {
 			return {
 				
@@ -22,7 +28,10 @@
 		},
 		methods: {
 			back() {
-				uni.navigateBack()
+				// console.log(this.routerPath)
+				uni.reLaunch({
+					url: this.routerPath
+				})
 			}
 		}
 	}

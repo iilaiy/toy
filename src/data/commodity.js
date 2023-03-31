@@ -100,8 +100,8 @@ var json = {
 			"salesVolume": 1253,
 			"headImg": "https://28737108.s61i.faimallusr.com/2/AD0I1PzZDRACGAAg0-XMkAYo2PPW-wMw7gU47gU.jpg",
 			"parameter": {
-				"type": "盲盒",
-				"specification": "一盒"
+				"type": "玩具手办",
+				"specification": "一个"
 			},
 			"description": "【精选好货】手触舒适，做工精致，外观可爱，很讨孩子们喜欢",
 			"picList": [],
@@ -164,24 +164,6 @@ var json = {
 		},
 		{
 			"cid": 10,
-			"name": "交通系列盲盒公仔玩具",
-			"image": "https://29449448.s61i.faimallusr.com/2/AD0I6LmFDhACGAAg6fOGlQYon56j6AEw7gU47gU!400x400.jpg",
-			"categoryName": "雕像玩偶",
-			"categoryId": 22,
-			"price": "58",
-			"salesVolume": 1115,
-			"headImg": "https://29449448.s61i.faimallusr.com/2/AD0I6LmFDhACGAAg6fOGlQYon56j6AEw7gU47gU.jpg",
-			"parameter": {
-				"type": "玩具",
-				"specification": "一份"
-			},
-			"description": "不能提前得知具体产品款式的玩具盒子，具有随机属性。",
-			"picList": [],
-			"content": "盒子里装着样式多样的可爱玩偶手办，但盒子上并没有标注具体是哪一款，里面通常装的是动漫、影视作品的周边，或者设计师单独设计出来的玩偶。之所以叫盲盒，是因为盒子上没有标注，只有打开才会知道自己抽到了什么。",
-			"recommend": ""
-		},
-		{
-			"cid": 11,
 			"name": "蜡笔小新日常系列盲盒",
 			"image": "https://29449448.s61i.faimallusr.com/2/AD0I6LmFDhACGAAg6vOGlQYozuv34QUw7gU47gU!400x400.jpg",
 			"categoryName": "盲盒玩具",
@@ -199,7 +181,7 @@ var json = {
 			"recommend": ""
 		},
 		{
-			"cid": 12,
+			"cid": 11,
 			"name": "交通系列盲盒公仔玩具",
 			"image": "https://29449448.s61i.faimallusr.com/2/AD0I6LmFDhACGAAg6fOGlQYon56j6AEw7gU47gU!400x400.jpg",
 			"categoryName": "盲盒玩具",
@@ -217,7 +199,7 @@ var json = {
 			"recommend": ""
 		},
 		{
-			"cid": 13,
+			"cid": 12,
 			"name": "动物咖啡师系列手办",
 			"image": "https://29449448.s61i.faimallusr.com/2/AD0I6LmFDhACGAAg6vOGlQYouqyOiQQw7gU47gU!400x400.jpg",
 			"categoryName": "玩具手办",
@@ -235,7 +217,7 @@ var json = {
 			"recommend": ""
 		},
 		{
-			"cid": 14,
+			"cid": 13,
 			"name": "鲷鱼烧熊猫可爱手办",
 			"image": "https://29449448.s61i.faimallusr.com/2/AD0I6LmFDhACGAAg6fOGlQYoiebtHDDuBTjuBQ!400x400.jpg",
 			"categoryName": "潮流玩具",
