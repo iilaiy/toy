@@ -68,7 +68,7 @@
 						this.resultArray.sort((val, val2) => {
 							return val2.salesVolume - val.salesVolume
 						})
-						// console.log(this.resultArray)
+						console.log(this.resultArray)
 						break
 						/* 价格 */
 					case 3:
@@ -84,7 +84,7 @@
 				}
 			}
 		},
-		mounted() {
+		created() {
 			this.searchResult(this.keyword)
 		}
 	}

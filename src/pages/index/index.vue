@@ -131,7 +131,8 @@
 				  { name:"玩具手办", categoryId: 55, left: null, width: null },
 				  { name:"潮流玩具", categoryId: 66, left: null, width: null },
 				],
-				commodityList: jsonData.commodityList.commodityData,	// 所有商品
+				/* 此处深拷贝一份数据（以防数据丢失） */
+				commodityList: [...jsonData.commodityList.commodityData],	// 所有商品
 				// commodityList: [],
 				hotList: [],	// 热门商品
 				cmpData: [],	// 组件数据
@@ -213,7 +214,9 @@
 		},
 		created() {
 			// this.getCommodity()
-			this.filterHot(this.commodityList)
+			/* 此处深拷贝一份数据传递（以防数据丢失）-（函数内涉及了splice方法 ） */
+			this.filterHot([...this.commodityList])
+			// this.filterHot(this.commodityList)
 			this.filterCmpData(this.tabIndex)
 		},
 		watch: {
