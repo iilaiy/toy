@@ -38,10 +38,10 @@
 
 <style lang="scss" scoped>
 	.menu-container {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		overflow-x: scroll;
+		white-space: nowrap;
 		.menu-item {
+			display: inline-block;
 			width: calc(100% / 5);
 			i {
 				display: block;

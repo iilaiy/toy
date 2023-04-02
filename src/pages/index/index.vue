@@ -22,7 +22,7 @@
 		<!-- 菜单 -->
 		<SwiperTab :tabBars="tabBars" :tabIndex="tabIndex" @tabtap="tabtap"></SwiperTab>
 		<scroll-view class="moduleWrap" scroll-y>
-			<!-- 滑动|点击 切换组件数据 --><!-- @tabtap="touchTab" -->
+			<!-- (滑动)|点击 切换组件数据 --><!-- @tabtap="touchTab" -->
 			<IndexSubject :moduleData="cmpData" ></IndexSubject>
 		</scroll-view>
 		<view class="main">
@@ -82,7 +82,7 @@
 						iconPath: '/static/img/icon/AD0I6LmFDhAEGAAg9cmGlQYosMfE2wMwbThp.png',
 						text: '潮流玩具',
 						hrefs: '/pages/fashionToy/fashionToy'
-					},
+					}
 				],
 				replenishmentList: [
 					{

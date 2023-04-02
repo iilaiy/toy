@@ -11,7 +11,7 @@
 	</view> -->
 	<u-tabs 
 		:list="category" 
-		@tap="tabtap"
+		@click="tabtap"
 		lineColor="#ff5e15"
 		lineHeight="6rpx"
 		lineWidth="45rpx"
@@ -54,7 +54,7 @@
 			tabtap(item) {
 				// this.$emit('tabtap', index)
 				this.$emit('tabtap', item.index)
-				this.changeTitle(item.index)
+				// this.changeTitle(item.index)
 			},
 			// 获取标题区域宽度，和每个子元素节点的宽度以及元素距离左边栏的距离
 			getScrollW() {
@@ -96,7 +96,7 @@
 		},
 		watch: {
 			tabIndex(val) {
-				this.changeTitle(val)
+				// this.changeTitle(val)
 			}
 		}
 	}

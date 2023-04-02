@@ -155,7 +155,7 @@
 						box-sizing: border-box;
 						text-align: center;
 						.item-title {
-							margin-bottom: 5rpx;
+							margin-bottom: 6rpx;
 						}
 					}
 				}

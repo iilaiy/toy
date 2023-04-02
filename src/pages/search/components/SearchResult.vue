@@ -3,6 +3,7 @@
 		<ResultControl
 			class="rescont"
 			v-for="item in resultArray"
+			:key="item.cid"
 			:imgPath="item.image"
 			:name="item.name"
 			:price="Number(item.price)"
