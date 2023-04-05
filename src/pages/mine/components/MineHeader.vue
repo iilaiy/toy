@@ -4,7 +4,7 @@
     <view class="user">
       <view
         class="h-img"
-        style="background-image: url('../../../static/img/mine/tx1.png');"
+        :style="{'background-image': 'url(' + user_img + ')'}"
       ></view>
       <view class="moreinfo">
         <view class="name">
@@ -36,7 +36,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+	data() {
+		return {
+			/* 头像 */
+			user_img: '/static/img/mine/tx1.png'
+		}
+	}
+}
 </script>
 
 <style lang="scss" scoped>
