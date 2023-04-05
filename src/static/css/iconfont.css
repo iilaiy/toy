@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3980901 */
-  src: url('//at.alicdn.com/t/c/font_3980901_vlgac734ith.woff2?t=1679969704279') format('woff2'),
-       url('//at.alicdn.com/t/c/font_3980901_vlgac734ith.woff?t=1679969704279') format('woff'),
-       url('//at.alicdn.com/t/c/font_3980901_vlgac734ith.ttf?t=1679969704279') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3980901_xj9h5g5jss.woff2?t=1680717460725') format('woff2'),
+       url('//at.alicdn.com/t/c/font_3980901_xj9h5g5jss.woff?t=1680717460725') format('woff'),
+       url('//at.alicdn.com/t/c/font_3980901_xj9h5g5jss.ttf?t=1680717460725') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,126 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-kanjia:before {
+  content: "\e6d1";
+}
+
+.icon-31jifen:before {
+  content: "\e601";
+}
+
+.icon-biaodan:before {
+  content: "\e715";
+}
+
+.icon-pintuan:before {
+  content: "\e60d";
+}
+
+.icon-dizhiguanli:before {
+  content: "\e63f";
+}
+
+.icon-shoucang:before {
+  content: "\e686";
+}
+
+.icon-yue:before {
+  content: "\e606";
+}
+
+.icon-lipinka:before {
+  content: "\e60a";
+}
+
+.icon-tuanchang:before {
+  content: "\e639";
+}
+
+.icon-tuichudenglu:before {
+  content: "\e62f";
+}
+
+.icon-kuajingkaidian:before {
+  content: "\e604";
+}
+
+.icon-youhuijuan:before {
+  content: "\e621";
+}
+
+.icon-a-VIPhuiyuanhuiyuanka:before {
+  content: "\e643";
+}
+
+.icon-fenxiao:before {
+  content: "\e61b";
+}
+
+.icon-tuiguangguanli:before {
+  content: "\e61f";
+}
+
+.icon-youjiantou:before {
+  content: "\e612";
+}
+
+.icon-31daifahuo:before {
+  content: "\e600";
+}
+
+.icon-daifukuan:before {
+  content: "\e603";
+}
+
+.icon-yifahuo:before {
+  content: "\e620";
+}
+
+.icon-ziyuan33:before {
+  content: "\e779";
+}
+
+.icon-jiaoyiguanbi:before {
+  content: "\e62c";
+}
+
+.icon-vip1:before {
+  content: "\e6bf";
+}
+
+.icon-vip2:before {
+  content: "\e6c0";
+}
+
+.icon-vip3:before {
+  content: "\e6c1";
+}
+
+.icon-vip5:before {
+  content: "\e6c2";
+}
+
+.icon-vip6:before {
+  content: "\e6c3";
+}
+
+.icon-vip7:before {
+  content: "\e6c4";
+}
+
+.icon-vip8:before {
+  content: "\e6c5";
+}
+
+.icon-vip9:before {
+  content: "\e6c6";
+}
+
+.icon-vip4:before {
+  content: "\e6c9";
 }
 
 .icon-fanhui:before {

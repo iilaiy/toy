@@ -95,12 +95,6 @@
 					height: 300rpx;
 					background-size: cover;
 					background-position: center top;
-					/* image {
-						max-width: 100%;
-						max-height: 100%;
-						display: block;
-						margin: auto;
-					} */
 				}
 			}
 			.sbot {
